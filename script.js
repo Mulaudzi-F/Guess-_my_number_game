@@ -32,16 +32,12 @@ check.addEventListener('click', function(){
         }
         
     }
-    else if(secretNumber < input.value  && input.value  <= 20){
+    else if(secretNumber != input.value){
         message.textContent ='your guess is high';
-    }
-    else if(input.value  > 20 || input.value < 0){
-        message.textContent = 'you are out of the range';
-    }
-    else if(secretNumber > input.value ){
-        message.textContent = 'your guess is low';
-    }
-})
+
+      message.textContent =  input.value > secretNumber? 'Too High': 'Too low'
+    
+}})
 
 againButton = document.querySelector('.again');
 againButton.addEventListener('click',function(){
